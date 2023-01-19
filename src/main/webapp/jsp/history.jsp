@@ -32,14 +32,14 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="admin_login.jsp"><i class="fa-solid fa-right-to-bracket"></i> Admin</a></li>
+						aria-current="page" href="jsp/admin_login.jsp"><i class="fa-solid fa-right-to-bracket"></i> Admin</a></li>
 						
 						<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="doctor_login.jsp">Doctor</a></li>
+						aria-current="page" href="jsp/doctor_login.jsp">Doctor</a></li>
 						
 						
 						<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="user_login.jsp">User</a></li>
+						aria-current="page" href="jsp/user_login.jsp">User</a></li>
 				</ul>
 			</div>
 		</div>
@@ -66,18 +66,13 @@
  			
  			
  			if(rs1.next()==false){
- 				out.println("No Records Found !...");
- 				registrationCost=0;
+ 				out.println("No Records Found !...");registrationCost=0;
+ 				
  			} else{ %><h6>History Of <%= rs1.getString(2)%>  having patient Id "<%= rs1.getInt(1)%>"</h6><%
- 			
- 				     do{
  				          pId = rs1.getInt(1);
- 				     }while(rs1.next());
  			}  %> </br></br>
  			
  			
- 			
-         
          
          </br> <h6> List Of Test and Test Reports </h6> <%
 

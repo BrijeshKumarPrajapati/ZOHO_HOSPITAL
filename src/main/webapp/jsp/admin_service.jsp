@@ -133,14 +133,44 @@ try{
 	 e.getStackTrace();
  }	
  %> </br></br></br>
-
-
-
-
-
 	 
 	 <h5>Get Patient History</h5>
-	<a href="historyInput.jsp">Patient History</a></br></br>
+	<a href="historyInput.jsp">Patient History</a></br></br></br></br>
+	
+	
+	
+	
+	
+	
+	<h5>Add and Update Pathology, Medicine</h5>
+	 <form action="/ZOHO_HOSPITAL/testUPDATE" method="post">
+      <h6>Add New Test</h6>
+      Test Name: <input type ="text" name="testAddName"/></br></br>
+      Test Price    : <input type="number" name="testAddPrice"/></br></br>
+      Submit Details : <button type="submit" name="testSubmit" value="testSubmit">Add New Test</button></br></br>
+     
+      
+      <h6>Update Price Of Test</h6>
+      Enter Test Name: <input type="text" name="testItem"/></br></br>
+      Enter New Test Price: <input type="number" name="oldPrice"/></br></br>
+      Submit :<button type="submit" name="updateTestSubmit" value="updateTestSubmit">Update New Test Price</button></br></br>
+     </form>
+	
+	
+	
+	<form action="/ZOHO_HOSPITAL/medicineUPDATE" method="post">
+      <h6>Add New Medicine</h6>
+      Medicine Name: <input type ="text" name="medicineAddName"/></br></br>
+      Medicine Price    : <input type="number" name="medicineAddPrice"/></br></br>
+      Submit Details : <button type="submit" name="medicineSubmit" value="medicineSubmit">Add New Medicine</button></br></br>
+     
+      
+      <h6>Update Price Of Medicine</h6>
+      Enter Medicine Name: <input type="text" name="testItem"/></br></br>
+      Enter New Medicine Price: <input type="number" name="oldPrice"/></br></br>
+      Submit :<button type="submit" name="updateMedicineSubmit" value="updateMedicineSubmit">Update New Medicine Price</button></br></br>
+     </form> </br></br>
+	
 	<div class="container-fluid p-1 bg-success text-center text-white">
 	<p>@copyright Zoho Hospital</p>
 	<script

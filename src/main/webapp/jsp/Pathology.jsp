@@ -76,7 +76,7 @@
  				   
  				     do{%>
  				     
- 				        <% PatientId = 2;
+ 				        <% PatientId = rs1.getInt(2);
  				     
  				      Statement stmt2 = con.createStatement();
  			          String qry2 = "SELECT pName FROM  patient WHERE pId="+PatientId+"";

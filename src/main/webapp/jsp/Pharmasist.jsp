@@ -63,18 +63,7 @@
  			String qry1 = "SELECT * FROM  medicineUser WHERE mStatus="+0+"";
  			ResultSet rs1 = stmt1.executeQuery(qry1);
  			
- 			PatientId = rs1.getInt(1);
  			
- 			Statement stmt2 = con.createStatement();
- 			String qry2 = "SELECT pName FROM  patient WHERE pId="+PatientId+"";
- 			ResultSet rs2 = stmt2.executeQuery(qry2);
- 			
- 			
- 			if(rs2.next()==false){
- 				out.println("No Records Found !...");
- 			} else{
- 				PatientName = rs2.getString(2);
- 			}
  			
  			
  			if(rs1.next()==false){
@@ -84,6 +73,18 @@
  				     <tr><th>Medicine Id</th><th>....</th><th>Patient Id</th><th>....</th><th>Patient Name</th><th>....</th><th>Medicine Name</th><th>....</th></tr> <%
  				   
  				     do{%>
+ 				     
+ 				     <% PatientId = rs1.getInt(1);
+ 				     
+ 				      Statement stmt2 = con.createStatement();
+ 			          String qry2 = "SELECT * FROM  patient WHERE pId="+PatientId+"";
+ 			         ResultSet rs2 = stmt2.executeQuery(qry2); 
+ 			         if(rs2.next()){
+ 			        	 PatientName=rs2.getString(2);
+ 			        }
+ 			         
+ 			         %>
+ 				     
  				          <tr><td><%= rs1.getInt(3)%></td><td></td><td> <%= rs1.getInt(1)%></td><td></td><td> <%= PatientName%></td><td></td><td><%= rs1.getString(2) %></td></tr>
  				          <% 
  				    	 

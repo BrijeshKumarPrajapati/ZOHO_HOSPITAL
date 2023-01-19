@@ -59,7 +59,7 @@
  			
  			String qry2 = "SELECT * FROM medicine ";
  			
- 			String qry3 = "SELECT pName FROM  patient WHERE pId ="+pId+"";
+ 			String qry3 = "SELECT * FROM  patient WHERE pId ="+pId+"";
  			
  			Statement stmt2 = con.createStatement();
  			

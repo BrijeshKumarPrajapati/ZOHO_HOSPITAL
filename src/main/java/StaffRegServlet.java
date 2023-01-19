@@ -15,6 +15,7 @@ public class StaffRegServlet extends HttpServlet{
 		String Role = request.getParameter("Role");
 		double Mobile = Double.parseDouble(request.getParameter("Mobile"));
 		String Specialization = request.getParameter("Specialization");
+		int age = Integer.parseInt(request.getParameter("Age"));
 		
 		
 		
@@ -22,7 +23,7 @@ public class StaffRegServlet extends HttpServlet{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital", "root", "Demo@123");
 			System.out.println("Connection is : " + con);
-			PreparedStatement stmt = con.prepareStatement("insert into user_dtls (fullName, email, password, role, mobile, specialization) values(?,?,?,?,?,?)");
+			PreparedStatement stmt = con.prepareStatement("insert into user_dtls (fullName, email, password, role, mobile, specialization,age) values(?,?,?,?,?,?,?)");
 			
 			
 			stmt.setString(1, Name);
@@ -31,6 +32,7 @@ public class StaffRegServlet extends HttpServlet{
 			stmt.setString(4, Role);
 			stmt.setDouble(5, Mobile);
 			stmt.setString(6, Specialization);
+			stmt.setInt(7, age);
 			int i = stmt.executeUpdate();  
 			System.out.println(i + "records inserted"); 
 			response.getWriter().print("Now! User Registered Successfully");

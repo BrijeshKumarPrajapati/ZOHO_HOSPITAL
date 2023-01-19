@@ -51,6 +51,7 @@ Email <input type="text" name="Email"/></b></br></br>
 Password <input type="text" name="Pass"/></br></br>
 Role <input type="text" name="Role" value="pharma"/></br></br>
 Mobile <input type="number" name="Mobile"/></br></br>
+Age <input type="number" name="Age"/></br></br>
 Specialization <input type="text" name="Specialization" value="pharmasist"/></br></br>
        <button type="submit" name="Submit" value="Submit">Submit Details</button>
 </form>
