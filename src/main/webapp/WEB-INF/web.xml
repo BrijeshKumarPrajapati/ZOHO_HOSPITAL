@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>ZOHO_HOSPITAL</display-name>
+  <welcome-file-list>
+    <welcome-file>jsp/main.jsp</welcome-file>
+  </welcome-file-list>
+  
+  
+  <servlet>
+		<servlet-name>admin</servlet-name>
+		<servlet-class>AdminLoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>admin</servlet-name>
+		<url-pattern>/admin_login</url-pattern>
+	</servlet-mapping>
+  
+  <servlet>
+		<servlet-name>Registration</servlet-name>
+		<servlet-class>StaffRegServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Registration</servlet-name>
+		<url-pattern>/Reg</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>docService</servlet-name>
+		<servlet-class>DoctorServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>docService</servlet-name>
+		<url-pattern>/user</url-pattern>
+	</servlet-mapping>
+  
+ <servlet>
+		<servlet-name>pathService</servlet-name>
+		<servlet-class>UserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>pathService</servlet-name>
+		<url-pattern>/userServ</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>patiREG</servlet-name>
+		<servlet-class>PatientRegServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>patiREG</servlet-name>
+		<url-pattern>/patientRegistration</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>patiBOOK</servlet-name>
+		<servlet-class>AppointBookServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>patiBOOK</servlet-name>
+		<url-pattern>/patientAppointment</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>patient</servlet-name>
+		<servlet-class>PatientServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>patient</servlet-name>
+		<url-pattern>/pReg</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Booking</servlet-name>
+		<servlet-class>AppointmentBookingServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Booking</servlet-name>
+		<url-pattern>/appoint</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>sendToPathology</servlet-name>
+		<servlet-class>SendToPathologyServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>sendToPathology</servlet-name>
+		<url-pattern>/docOBSERVATION</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>PathologyReport</servlet-name>
+		<servlet-class>SendPathDoctorServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PathologyReport</servlet-name>
+		<url-pattern>/pathREPORT</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Consultation</servlet-name>
+		<servlet-class>FinalConsultationServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Consultation</servlet-name>
+		<url-pattern>/docCONSULTATION</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>Pharmasist</servlet-name>
+		<servlet-class>PharmasistClearanceServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Pharmasist</servlet-name>
+		<url-pattern>/mediREPORT</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>Clearance</servlet-name>
+		<servlet-class>ClearanceServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Clearance</servlet-name>
+		<url-pattern>/clearance</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Final</servlet-name>
+		<servlet-class>FinalServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Final</servlet-name>
+		<url-pattern>/final</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>History</servlet-name>
+		<servlet-class>HistoryServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>History</servlet-name>
+		<url-pattern>/historyInpput</url-pattern>
+	</servlet-mapping>
+		
+		
+		<servlet>
+		<servlet-name>seeConsult</servlet-name>
+		<servlet-class>SeeConsultationServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>seeConsult</servlet-name>
+		<url-pattern>/seeConsult</url-pattern>
+		
+	</servlet-mapping>
+	
+</web-app>

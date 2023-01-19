@@ -1,0 +1,30 @@
+@charset "UTF-8";
+.boxed{
+border: 1px solid green ;
+width:300px;
+height:350px;
+background-color:MediumSeaGreen;
+text-align:center;
+justify-content:center;
+margin:0 auto;
+}
+button{
+width:90px;
+height:60px;
+font-size:40px;
+background-color:DodgerBlue;
+margin:0 auto;
+}
+button:hover{
+background-color:SlateBlue;
+color:grey;
+}
+p{
+text-align:center;
+font-size:50px;
+color:white;
+font-weight:bold;
+}
+h1{
+color:orange;
+}
