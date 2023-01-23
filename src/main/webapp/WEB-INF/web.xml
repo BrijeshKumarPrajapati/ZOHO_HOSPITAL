@@ -148,7 +148,7 @@
 	</servlet-mapping>
 		
 		
-		<servlet>
+	<servlet>
 		<servlet-name>seeConsult</servlet-name>
 		<servlet-class>SeeConsultationServlet</servlet-class>
 	</servlet>
@@ -156,6 +156,71 @@
 		<servlet-name>seeConsult</servlet-name>
 		<url-pattern>/seeConsult</url-pattern>
 		
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>employee</servlet-name>
+		<servlet-class>UpdateEmployeeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>employee</servlet-name>
+		<url-pattern>/employeeUPDATE</url-pattern>
+		
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>employeeD</servlet-name>
+		<servlet-class>DeleteEmployeeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>employeeD</servlet-name>
+		<url-pattern>/employeeDelete</url-pattern>
+		
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>testAdd</servlet-name>
+		<servlet-class>AddNewTestServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>testAdd</servlet-name>
+		<url-pattern>/testUPDATE</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+	<servlet>
+		<servlet-name>testUpdate</servlet-name>
+		<servlet-class>UpdateTestServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>testUpdate</servlet-name>
+		<url-pattern>/testUPDATE_2</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	<servlet>
+		<servlet-name>medicineAdd</servlet-name>
+		<servlet-class>AddNewMedicineServelet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>medicineAdd</servlet-name>
+		<url-pattern>/medicineUPDATE</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+	<servlet>
+		<servlet-name>medicineUpdate</servlet-name>
+		<servlet-class>UpdateMedicineServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>medicineUpdate</servlet-name>
+		<url-pattern>/medicineUPDATE_2</url-pattern>
 	</servlet-mapping>
 	
 </web-app>

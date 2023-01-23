@@ -148,28 +148,54 @@ try{
       Test Name: <input type ="text" name="testAddName"/></br></br>
       Test Price    : <input type="number" name="testAddPrice"/></br></br>
       Submit Details : <button type="submit" name="testSubmit" value="testSubmit">Add New Test</button></br></br>
-     
+     </form>
       
+      <form action="/ZOHO_HOSPITAL/testUPDATE_2" method="post">
       <h6>Update Price Of Test</h6>
+      <p style="color:green;">Enter test name as (x-ray, ultraSound, blood, urine...)</p>
       Enter Test Name: <input type="text" name="testItem"/></br></br>
       Enter New Test Price: <input type="number" name="oldPrice"/></br></br>
       Submit :<button type="submit" name="updateTestSubmit" value="updateTestSubmit">Update New Test Price</button></br></br>
-     </form>
+     </form></br></br></br>
 	
 	
-	
+	<h6>Add New Medicine</h6>
 	<form action="/ZOHO_HOSPITAL/medicineUPDATE" method="post">
-      <h6>Add New Medicine</h6>
+    
       Medicine Name: <input type ="text" name="medicineAddName"/></br></br>
       Medicine Price    : <input type="number" name="medicineAddPrice"/></br></br>
       Submit Details : <button type="submit" name="medicineSubmit" value="medicineSubmit">Add New Medicine</button></br></br>
-     
+     </form>
       
+      
+      <form action="/ZOHO_HOSPITAL/medicineUPDATE_2" method="post">
       <h6>Update Price Of Medicine</h6>
       Enter Medicine Name: <input type="text" name="testItem"/></br></br>
       Enter New Medicine Price: <input type="number" name="oldPrice"/></br></br>
       Submit :<button type="submit" name="updateMedicineSubmit" value="updateMedicineSubmit">Update New Medicine Price</button></br></br>
-     </form> </br></br>
+      </form> </br></br></br></br>
+     
+     
+     
+      <h5>Employee Update Service</h5>
+	  <form action="/ZOHO_HOSPITAL/employeeUPDATE" method="post">
+      <h6>Update Employee</h6>
+      
+       Enter Name: <input type="text" name="entityChange"/></br></br></br> 
+       Enter Mobile No: <input  type="number" name="employeeKnown"/></br></br>
+       Submit Details : <button type="submit" name="employeeSubmit" value="employeeSubmit">Update Employee Name</button></br></br></br></br>
+      </form>
+      
+      
+      <form action="/ZOHO_HOSPITAL/employeeDelete" method="post">
+      <h6>Delete Employee</h6>
+      Enter Employee Name: <input type="text" name="deleteEmployee"/></br></br>
+      Submit :<button type="submit" name="deleteSubmit" value="deleteSubmit">Delete Employee</button></br></br>
+     </form>
+	
+	
+	
+
 	
 	<div class="container-fluid p-1 bg-success text-center text-white">
 	<p>@copyright Zoho Hospital</p>

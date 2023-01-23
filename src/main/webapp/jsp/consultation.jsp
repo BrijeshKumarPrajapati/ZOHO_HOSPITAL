@@ -82,7 +82,7 @@
  				out.println("No Records Found !...");
  			} else{%>
  				<table>
- 				     <tr><th>Patient Id</th><th>....</th><th>Patient Name</th><th>....</th><th>Test ID</th><th>....</th><th>Test Name</th><th>....</th><th>Discription</th></tr> <%
+ 				     <tr><th>Patient Id</th><th>....</th><th>Patient Name</th><th>....</th><th>Test ID</th><th>....</th><th>Test Name</th><th>....</th><th>Description</th></tr> <%
  				   
  				     do{%>
  				          <tr><td><input type="radio" name="testReport" value="<%= rs1.getInt(2) %>"/></td><td></td><td><%= PatientName%></td><td></td><td><%= rs1.getInt(1)%></td><td></td><td> <%= rs1.getString(4)%></td>

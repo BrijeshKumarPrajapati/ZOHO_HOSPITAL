@@ -50,6 +50,7 @@ Email <input type="text" name="Email"/></b></br></br>
 Password <input type="text" name="Pass"/></br></br>
 Role <input type="text" name="Role"value="receptionist"/></br></br>
 Mobile <input type="text" name="Mobile"/></br></br>
+Age <input type="number" name="Age"/></br></br>
 Specialization <input type="text" name="Specialization" value="receptionist"/></br></br>
        <button type="submit" name="Submit" value="Submit">Submit Details</button>
 </form>

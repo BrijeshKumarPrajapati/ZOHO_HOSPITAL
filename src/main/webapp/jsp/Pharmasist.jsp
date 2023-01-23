@@ -51,6 +51,7 @@
         		//String mobile =request.getParameter("userDoc");
 			    int PatientId = 0;
                 String PatientName= null;
+                String PatientName1="";
         
          try{
         	 
@@ -80,7 +81,12 @@
  			          String qry2 = "SELECT * FROM  patient WHERE pId="+PatientId+"";
  			         ResultSet rs2 = stmt2.executeQuery(qry2); 
  			         if(rs2.next()){
- 			        	 PatientName=rs2.getString(2);
+ 			        	 if(PatientName.equals(PatientName1)){
+ 			        		 PatientName="";
+ 			        	 } else {
+ 			        		PatientName=rs2.getString(2);
+ 			        	 }
+ 			        	PatientName1=rs2.getString(2);
  			        }
  			         
  			         %>

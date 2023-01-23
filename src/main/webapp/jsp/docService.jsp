@@ -47,6 +47,8 @@
 	<form action="/ZOHO_HOSPITAL/docOBSERVATION" method="post"> <%
         		
         		String mobile =request.getParameter("userDoc");
+	int PatientId =0;
+	int n=0;
         
          try{
         	 
@@ -60,11 +62,24 @@
  			
  			String qry2 = "SELECT * FROM test ";
  			
+ 			String qry3 = "SELECT * FROM  testUser tu WHERE  tu.pId in (SELECT pId FROM booking b WHERE b.u_id= (SELECT u_id FROM user_dtls ud WHERE ud.mobile="+mobile+")) AND tStatus="+1+" ORDER BY time DESC";
+ 			
+ 			
  			Statement stmt2 = con.createStatement();
  			
  			ResultSet rs1 = stmt1.executeQuery(qry1);
  			
- 			ResultSet rs2 = stmt2.executeQuery(qry2);%> </br><%
+ 			ResultSet rs2 = stmt2.executeQuery(qry2);
+ 			
+            Statement stmt3 = con.createStatement();
+ 			
+ 			ResultSet rs3 = stmt3.executeQuery(qry3);
+ 			
+ 			
+ 			
+ 			
+ 			
+ 			%> </br><%
 
  			if(rs1.next()==false){
  				out.println("No Appoinments Till Now !...");
@@ -79,7 +94,7 @@
  				    	 
  				     }while(rs1.next());%>
  				     
- 				</table><% //out.println("<b>Total transaction with us till now is : </b>"+" "+" "+ sum +"/-");%>
+ 				</table>
  				<%
  			}  %> </br></br>
  			
@@ -97,14 +112,35 @@
  				    	 
  				     }while(rs2.next());%>
  				     
- 				</table> </br><% //out.println("<b>Total transaction with us till now is : </b>"+" "+" "+ sum +"/-");%></br><%
- 			}
-         } catch(Exception e){
+ 				</table> <%
+ 				
+ 				}%></br></br>
+ 				
+ 				<h6>List Of latest Consulted Patients</h6><%
+ 			
+ 			if(rs3.next()==false){
+ 				out.println("No Patient Is Visited...");
+ 			} else{%>
+ 				<table>
+ 				     <tr><th> Patient Id </th><th> Test Name </th><th> Description </th></tr> <%
+ 				   
+ 				     do{
+ 				     if(n<5){%>
+ 				     
+ 				     <tr><td><%= rs3.getInt(2)%></td><td><%= rs3.getString(4)%></td><td><%= rs3.getString(5)%></td></tr>
+ 				          <% }
+ 				     n++;
+ 				    	 
+ 				     }while(rs3.next());%>
+ 				     
+ 				</table> </br></br>
+ 				<%
+ 		} 
+         }catch(Exception e){
         	 e.getStackTrace();
          }
         	
          %>
-        
            Send This Patient For Testing : <button type="submit" name="pathologyBook" value="pathologyBook">Send In Pathology</button>
          </form></br></br>
         <!--   <a href="seeConsultation.jsp">Go to Consultation Page</a></br> -->
