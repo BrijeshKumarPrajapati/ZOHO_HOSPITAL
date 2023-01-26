@@ -70,14 +70,14 @@
  				out.println("No Records Found !...");
  			} else{%>
  				<table>
- 				     <tr><th>Test ID</th><th>....</th><th>Patient Id</th><th>....</th><th>Patient Name</th><th>....</th><th>Test Name</th><th>....</th><th>Description</th></tr> <%
+ 				     <tr><th>Test ID</th><th>....</th><th>....</th><th>Patient Name</th><th>....</th><th>Test Name</th><th>....</th><th>Description</th></tr> <%
  				    
  				     do {%>
  				     <% PatientId = rs1.getInt(2);
- 				       Statement stmt2 = con.createStatement();
- 			           String qry2 = "SELECT pName FROM  patient WHERE pId="+PatientId+"";
- 			           ResultSet rs2 = stmt2.executeQuery(qry2); 
- 			           if(rs2.next()){
+ 				        Statement stmt2 = con.createStatement();
+ 			            String qry2 = "SELECT pName FROM  patient WHERE pId="+PatientId+"";
+ 			            ResultSet rs2 = stmt2.executeQuery(qry2); 
+ 			            if(rs2.next()){
  			        	  PatientName1 = rs2.getString(1);
  			        	if(PatientName.equals(PatientName1))
  			        	      {
@@ -89,7 +89,7 @@
  			        	     }
  			        	}
  			            %>
- 				          <tr><td><input type="checkbox" name="testReport" value="<%= rs1.getInt(6) %>"/></td><td></td><td><%= rs1.getInt(2)%></td><td></td>
+ 				          <tr><td><input type="checkbox" name="testReport" value="<%= rs1.getInt(6) %>"/></td><td></td><td></td>
  				          <td><%= PatientName%></td><td></td><td> <%= rs1.getString(4)%></td><td></td><td><input type="text" name="descPATH<%= rs1.getInt(6) %>"/></td></tr><% 
  				    	 
  				     } while(rs1.next());%>

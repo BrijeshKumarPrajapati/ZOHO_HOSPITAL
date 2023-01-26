@@ -50,7 +50,7 @@
         		
         		//String mobile =request.getParameter("userDoc");
 			    int PatientId = 0;
-                String PatientName= null;
+                String PatientName="";
                 String PatientName1="";
         
          try{
@@ -71,27 +71,28 @@
  				out.println("No Records Found !...");
  			} else{%><h6>Prescription of Doctor For Patient Id= <%= rs1.getInt(1)%></h6>
  				<table>
- 				     <tr><th>Medicine Id</th><th>....</th><th>Patient Id</th><th>....</th><th>Patient Name</th><th>....</th><th>Medicine Name</th><th>....</th></tr> <%
+ 				     <tr><th>Medicine Id</th><th>....</th><th>Patient Name</th><th>....</th><th>Medicine Name</th><th>....</th></tr> <%
  				   
  				     do{%>
  				     
- 				     <% PatientId = rs1.getInt(1);
- 				     
- 				      Statement stmt2 = con.createStatement();
- 			          String qry2 = "SELECT * FROM  patient WHERE pId="+PatientId+"";
- 			         ResultSet rs2 = stmt2.executeQuery(qry2); 
- 			         if(rs2.next()){
- 			        	 if(PatientName.equals(PatientName1)){
- 			        		 PatientName="";
- 			        	 } else {
- 			        		PatientName=rs2.getString(2);
- 			        	 }
- 			        	PatientName1=rs2.getString(2);
- 			        }
+ 				     <% PatientId = rs1.getInt(2);
+ 				       Statement stmt2 = con.createStatement();
+ 			           String qry2 = "SELECT pName FROM  patient WHERE pId="+PatientId+"";
+ 			           ResultSet rs2 = stmt2.executeQuery(qry2); 
+ 			           if(rs2.next()){
+ 			        	  PatientName1 = rs2.getString(1);
+ 			        	if(PatientName.equals(PatientName1))
+ 			        	      {
+ 			        		PatientName = "";
+ 			        	      } 
+ 			        	else {
+ 			        		PatientName = rs2.getString(1);
+ 			        	
+ 			        	     }
+ 			        	}
  			         
  			         %>
- 				     
- 				          <tr><td><%= rs1.getInt(3)%></td><td></td><td> <%= rs1.getInt(1)%></td><td></td><td> <%= PatientName%></td><td></td><td><%= rs1.getString(2) %></td></tr>
+ 				          <tr><td><%= rs1.getInt(3)%></td><td></td><td> <%= PatientName%></td><td></td><td><%= rs1.getString(2) %></td></tr>
  				          <% 
  				    	 
  				     }while(rs1.next());%>

@@ -9,7 +9,7 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="/home/local/ZOHOCORP/brijesh-15609/Downloads/java-json.jar.zip"/>
 	<classpathentry kind="lib" path="/home/local/ZOHOCORP/brijesh-15609/Downloads/mysql-connector-java-8.0.30.jar"/>
+	<classpathentry kind="lib" path="/home/local/ZOHOCORP/brijesh-15609/Downloads/java-json.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

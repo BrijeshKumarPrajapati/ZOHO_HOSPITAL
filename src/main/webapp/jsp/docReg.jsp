@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +16,14 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
 	integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
 	crossorigin="anonymous" referrerpolicy="no-referrer" />
+	
+	
+<script src="https://code.jquery.com/jquery-3.6.3.js" 
+integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" 
+crossorigin="anonymous"></script>
+
+<script src="/ZOHO_HOSPITAL/Js/addEmp.js"></script>
+
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
@@ -50,9 +59,9 @@ Email <input type="text" name="Email"/></b></br></br>
 Password <input type="text" name="Pass"/></br></br>
 Role <input type="text" name="Role" value="doctor"/></br></br>
 Mobile <input type="text" name="Mobile"/></br></br>
-Age <input type="number" name="Age"/></br></br>
+Age <input type="number"  name="Age"/></br></br>
 Specialization <input type="text" name="Specialization"/></br></br>
-       <button type="submit" name="Submit" value="Submit">Submit Details</button>
+       <button onclick="submitForm();" name="Submit" value="Submit">Submit Details</button>
 </form>
 
 
@@ -66,5 +75,6 @@ Specialization <input type="text" name="Specialization"/></br></br>
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
 		crossorigin="anonymous"></script>
+
 </body>
 </html>
