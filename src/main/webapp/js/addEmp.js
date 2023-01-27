@@ -2,23 +2,34 @@
  * 
  **/
  
- var empDetails = {
-
-};
 
 
 function submitForm()
 	{
-	      var fullName= $('input[name=Name]').val();
-	      var email = $('input[name=Email]').val();
-	      var password = $('input[name=Pass]').val();
-	      var role = $('input[name=Role]').val();
-	      var mobile = $('input[name=Mobile]').val();
-	      var age = $('input[name=Age]').val();
-	      var specialization = $('input[name=Specialization]').val();
-	      var empDetails = {"name": fullName, "email": email, "password": password, "role": role, "mobile": mobile, "age": age, "specialization": specialization};
-	     
-	   
+	      var fullName= $('#name').val();
+	      var email = $('#email').val();
+	      var password = $('#pass').val();
+	      var role = $('#role').val();
+	      var mobile = $('#mobile').val();
+	      var age = $('#age').val();
+	      var specialization = $('#specialization').val();
+	      
+	      empDetails = {"name": "", 
+	      "email": "", 
+	      "password": "", 
+	      "role": "", 
+	      "mobile": "", 
+	      "age": "", 
+	      "specialization": ""}
+	      
+	      empDetails.name = fullName;
+	      empDetails.email = email;
+	      empDetails.password = password;
+	      empDetails.role = role;
+	      empDetails.mobile = mobile;
+	      empDetails.age = age;
+	      empDetails.specialization = specialization;
+	     // consol.log(empDetails);
 	      let post = JSON.stringify(empDetails)
 	      const url = "/ZOHO_HOSPITAL/Reg";
 		  let xhr = new XMLHttpRequest()

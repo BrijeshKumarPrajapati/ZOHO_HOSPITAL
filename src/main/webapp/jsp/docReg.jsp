@@ -54,13 +54,13 @@ crossorigin="anonymous"></script>
 	<h5>Register Doctor Here</h5></br>
 	
 <form action="/ZOHO_HOSPITAL/Reg" method="post">
-Full Name <input type="text" name ="Name"/></br></br>
-Email <input type="text" name="Email"/></b></br></br>
-Password <input type="text" name="Pass"/></br></br>
-Role <input type="text" name="Role" value="doctor"/></br></br>
-Mobile <input type="text" name="Mobile"/></br></br>
-Age <input type="number"  name="Age"/></br></br>
-Specialization <input type="text" name="Specialization"/></br></br>
+Full Name <input type="text" id ="name" name ="Name"/></br></br>
+Email <input type="text" id ="email" name="Email"/></b></br></br>
+Password <input type="text" id="pass" name="Pass"/></br></br>
+Role <input type="text" id="role" name="Role" value="doctor"/></br></br>
+Mobile <input type="text" id ="mobile" name="Mobile"/></br></br>
+Age <input type="number" id="age" name="Age"/></br></br>
+Specialization <input type="text" id="specialization" name="Specialization"/></br></br>
        <button onclick="submitForm();" name="Submit" value="Submit">Submit Details</button>
 </form>
 
