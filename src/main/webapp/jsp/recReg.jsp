@@ -44,16 +44,15 @@
 	
 	</br></br>
 	<h5>Register Receptioninst Here</h5>
-	<form action="/ZOHO_HOSPITAL/Reg" method="post">
-Full Name <input type="text" name ="Name"/></br></br>
-Email <input type="text" name="Email"/></b></br></br>
-Password <input type="text" name="Pass"/></br></br>
-Role <input type="text" name="Role"value="receptionist"/></br></br>
-Mobile <input type="text" name="Mobile"/></br></br>
-Age <input type="number" name="Age"/></br></br>
-Specialization <input type="text" name="Specialization" value="receptionist"/></br></br>
-       <button type="submit" name="Submit" value="Submit">Submit Details</button>
-</form>
+
+Full Name <input type="text" id ="name" name ="Name"/></br></br>
+Email <input type="text" id ="email" name="Email"/></b></br></br>
+Password <input type="text" id="pass" name="Pass"/></br></br>
+Role <input type="text" id="role" name="Role" value="receptionist"/></br></br>
+Mobile <input type="text" id ="mobile" name="Mobile"/></br></br>
+Age <input type="number" id="age" name="Age"/></br></br>
+Specialization <input type="text" id="specialization" name="Specialization"/></br></br>
+<button type="button" onclick="submitForm();">Submit Details</button>
 	
 	
 	

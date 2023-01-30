@@ -16,6 +16,12 @@
 	integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
 	crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
+<script src="https://code.jquery.com/jquery-3.6.3.js" 
+integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" 
+crossorigin="anonymous"></script>
+
+ <script src="/ZOHO_HOSPITAL/js/addEmp.js"></script>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
@@ -45,17 +51,14 @@
 	
 	</br></br>
 	<h5>Register Pharmasist Here</h5></br>
-	<form action="/ZOHO_HOSPITAL/Reg" method="post">
-Full Name <input type="text" name ="Name"/></br></br>
-Email <input type="text" name="Email"/></b></br></br>
-Password <input type="text" name="Pass"/></br></br>
-Role <input type="text" name="Role" value="pharma"/></br></br>
-Mobile <input type="number" name="Mobile"/></br></br>
-Age <input type="number" name="Age"/></br></br>
-Specialization <input type="text" name="Specialization" value="pharmasist"/></br></br>
-       <button type="submit" name="Submit" value="Submit">Submit Details</button>
-</form>
-	
+	Full Name <input type="text" id ="name" name ="Name"/></br></br>
+Email <input type="text" id ="email" name="Email"/></b></br></br>
+Password <input type="text" id="pass" name="Pass"/></br></br>
+Role <input type="text" id="role" name="Role" value="pharma"/></br></br>
+Mobile <input type="text" id ="mobile" name="Mobile"/></br></br>
+Age <input type="number" id="age" name="Age"/></br></br>
+Specialization <input type="text" id="specialization" name="Specialization"/></br></br>
+<button type="button" onclick="submitForm();">Submit Details</button>
 	
 	
 	
