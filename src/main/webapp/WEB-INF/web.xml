@@ -223,4 +223,14 @@
 		<url-pattern>/medicineUPDATE_2</url-pattern>
 	</servlet-mapping>
 	
+	
+	<servlet>
+		<servlet-name>referPatient</servlet-name>
+		<servlet-class>ReferPatientServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>referPatient</servlet-name>
+		<url-pattern>/refer</url-pattern>
+	</servlet-mapping>
+	
 </web-app>

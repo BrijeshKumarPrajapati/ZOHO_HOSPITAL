@@ -1,6 +1,7 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,23 +15,29 @@ public class AddNewMedicineServelet extends HttpServlet{
 		int price = Integer.parseInt(request.getParameter("medicineAddPrice"));
 		
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital", "root", "Demo@123");
-			System.out.println("Connection is : " + con);
-			PreparedStatement stmt = con.prepareStatement("INSERT into  medicine (mName, mPrice) VALUES(?,?)");
-			stmt.setString(1, name);
-			stmt.setInt(2, price);
-
-			int i=stmt.executeUpdate();  
-			System.out.println(i+" records inserted"); 
+			addRecordToDb(name, price); 
 			response.getWriter().print("New Medicine Added Successfully...");
-			con.close(); 
 		} catch (Exception e) {
 			e.printStackTrace();
 
 		}
 		
 }
+
+	private void addRecordToDb(String name, int price) throws ClassNotFoundException, SQLException {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital", "root", "Demo@123");
+		System.out.println("Connection is : " + con);
+		PreparedStatement stmt = con.prepareStatement("INSERT into  medicine (mName, mPrice) VALUES(?,?)");
+		stmt.setString(1, name);
+		stmt.setInt(2, price);
+
+		int i=stmt.executeUpdate();  
+		System.out.println(i+" records inserted");
+		con.close(); 
+
+		return;
+	}
 
 
 }
