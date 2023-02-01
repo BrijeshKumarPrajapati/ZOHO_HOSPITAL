@@ -12,7 +12,7 @@ public class DoctorServlet extends HttpServlet{
 			
 			
 			
-		if (request.getParameter("userDoc")!=null && request.getParameter("docPass") !=null && obj1.valid(mobile).getPassword().equals(password)) {
+		if (request.getParameter("userDoc")!=null && request.getParameter("docPass") !=null && obj1.valid(mobile).getPassword().equals(password) && obj1.valid(mobile).getMobile()==mobile) {
 		 
 				response.sendRedirect("jsp/docService.jsp?userDoc="+request.getParameter("userDoc"));
 		  

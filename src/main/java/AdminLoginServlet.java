@@ -13,7 +13,7 @@ public class AdminLoginServlet extends HttpServlet{
 			
 			
 			
-		if (request.getParameter("userAdmin")!=null && request.getParameter("adminPass") !=null && obj1.valid(mobile).getPassword().equals(password)) {
+		if (request.getParameter("userAdmin")!=null && request.getParameter("adminPass") !=null && obj1.valid(mobile).getPassword().equals(password) && obj1.valid(mobile).getMobile()==mobile) {
 			
 			
 			

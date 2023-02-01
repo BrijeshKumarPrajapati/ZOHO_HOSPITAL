@@ -37,7 +37,7 @@ public class ReferPatientServlet extends HttpServlet{
 			PreparedStatement stmt1 = con.prepareStatement("insert into booking(pId, u_id, Date, Time) values(?,?,?,?)");
 			
 			stmt1.setInt(1, jObj.getInt("pId"));
-			stmt1.setInt(2, jObj.getInt("user-Id"));
+			stmt1.setInt(2, jObj.getInt("user_Id"));
 			stmt1.setDate(3, date);
 			stmt1.setTimestamp(4, time);
 		

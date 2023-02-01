@@ -12,7 +12,7 @@ public class UserServlet extends HttpServlet{
 			
 			
 			
-		if (request.getParameter("userLogin")!=null && request.getParameter("userPass") !=null && obj1.valid(mobile).getPassword().equals(password)) {
+		if (request.getParameter("userLogin")!=null && request.getParameter("userPass") !=null && obj1.valid(mobile).getPassword().equals(password)&& obj1.valid(mobile).getMobile()==mobile) {
 			
 			
 			
