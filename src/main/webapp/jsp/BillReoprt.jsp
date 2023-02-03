@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
-
+ <%@page import="com.connection.Conn"%>
 <%  double mobile = (double) request.getAttribute("MobileNo");%>
 <!DOCTYPE html>
 <html>
@@ -57,8 +57,11 @@
         
          try{
         	 
-        	Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+        	/*Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
  			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital", "root", "Demo@123");
+ 			
+ 			*/
+ 			Connection con = Conn.getCon();
  			System.out.println("Connection is : " + con);
  			Statement stmt1 = con.createStatement();
  			String qry1 = "SELECT * FROM  patient WHERE pMobile = "+mobile+"";

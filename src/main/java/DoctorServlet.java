@@ -19,8 +19,7 @@ public class DoctorServlet extends HttpServlet{
 		       }
 		
 		else {
-			
-                response.getWriter().print("Dear Customer! You Are Entering Wrong Input Please Check Your Mobile No.");
+			    response.getWriter().print("Dear Customer! You Are Entering Wrong Input Please Check Your Mobile No.");
 				response.getWriter().close();
 				response.getWriter().flush();
 		     }

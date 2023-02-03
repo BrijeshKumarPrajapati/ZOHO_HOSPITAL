@@ -9,7 +9,7 @@ import java.sql.Timestamp;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import com.connection.*;
 public class FinalConsultationServlet extends HttpServlet{
 	public void doPost (HttpServletRequest request, HttpServletResponse response) {
 		
@@ -33,8 +33,9 @@ public class FinalConsultationServlet extends HttpServlet{
 				int medicine = Integer.parseInt(Medicine[i]);
 			
 			try {
-				Class.forName("com.mysql.cj.jdbc.Driver");
+				/*Class.forName("com.mysql.cj.jdbc.Driver");
 				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital", "root", "Demo@123");
+				*/Connection con = Conn.getCon();
 				
 				Statement stmt2 = con.createStatement();
 				ResultSet rs2 = stmt2.executeQuery("select * from  medicine where mId = "+medicine+"");

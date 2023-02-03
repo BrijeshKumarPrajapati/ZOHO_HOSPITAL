@@ -7,7 +7,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import com.connection.*;
 public class FinalServlet extends HttpServlet{
 	public void service (HttpServletRequest request, HttpServletResponse response) throws IOException {
 	int  patientId = Integer.parseInt(request.getParameter("hiddenPid"));
@@ -18,8 +18,9 @@ public class FinalServlet extends HttpServlet{
 			
 			try {
 				
-				Class.forName("com.mysql.cj.jdbc.Driver");
+				/*Class.forName("com.mysql.cj.jdbc.Driver");
 				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital", "root", "Demo@123");
+				*/Connection con = Conn.getCon();
 				
 				PreparedStatement stmt1 = con.prepareStatement("UPDATE testUser SET tStatus = ? WHERE pId = ?");
 				

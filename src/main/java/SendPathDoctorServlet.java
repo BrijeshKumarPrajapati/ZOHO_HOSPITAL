@@ -7,7 +7,7 @@ import java.sql.Statement;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import com.connection.*;
 public class SendPathDoctorServlet extends HttpServlet{
 	public void doPost (HttpServletRequest request, HttpServletResponse response) {
 		
@@ -21,8 +21,9 @@ public class SendPathDoctorServlet extends HttpServlet{
 				String Discription = request.getParameter("descPATH"+testtId);
 			
 			try {
-				Class.forName("com.mysql.cj.jdbc.Driver");
+				/*Class.forName("com.mysql.cj.jdbc.Driver");
 				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital", "root", "Demo@123");
+				*/Connection con = Conn.getCon();
 				
 				PreparedStatement stmt1 = con.prepareStatement("UPDATE testUser SET discription = ? WHERE testUser_id = ?");
 				

@@ -2,7 +2,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-
+import com.connection.*;
 public class AdminLogin {
 	String fullName;
 	String email;
@@ -67,14 +67,12 @@ public class AdminLogin {
 				+ ", mobile=" + mobile + "]";
 	}
 	
-	
-	
-
 	public AdminLogin valid(double mobile) {
 		AdminLogin  validObj = new AdminLogin ();
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			/*Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital", "root", "Demo@123");
+			*/Connection con = Conn.getCon();
 			System.out.println("Connection is : " + con);
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery("select * from user_dtls Where mobile=\""+mobile+"\"");

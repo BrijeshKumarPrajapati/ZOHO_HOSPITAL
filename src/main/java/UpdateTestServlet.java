@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import com.connection.*;
 public class UpdateTestServlet extends HttpServlet{
     public void doPost(HttpServletRequest request, HttpServletResponse response) {
     
@@ -14,8 +14,9 @@ public class UpdateTestServlet extends HttpServlet{
   		int  price =Integer.parseInt(request.getParameter("oldPrice"));
   		
   		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			/*Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital", "root", "Demo@123");
+  			*/Connection con = Conn.getCon();
 			System.out.println("Connection is : " + con);
 			PreparedStatement stmt = con.prepareStatement("update test set testPrice =? where testName =?");
 			

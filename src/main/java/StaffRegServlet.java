@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.json.JSONObject;
-
+import com.connection.*;
 public class StaffRegServlet extends HttpServlet{
 	public void doPost (HttpServletRequest request, HttpServletResponse response) throws IOException {
 		try {
@@ -17,8 +17,9 @@ public class StaffRegServlet extends HttpServlet{
 					    Collectors.joining("\n"));
 					   // System.out.println(jsonBody);
 			JSONObject jObj = new JSONObject(jsonBody);				   
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			/*Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital", "root", "Demo@123");
+			*/Connection con = Conn.getCon();
 			System.out.println("Connection is : " + con);
 			PreparedStatement stmt = con.prepareStatement("insert into user_dtls (fullName, email, password, role, mobile, age, specialization) values(?,?,?,?,?,?,?)");
 			

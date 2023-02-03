@@ -11,23 +11,15 @@ public class AdminLoginServlet extends HttpServlet{
 	try {
 			AdminLogin obj1= new AdminLogin();
 			
-			
-			
-		if (request.getParameter("userAdmin")!=null && request.getParameter("adminPass") !=null && obj1.valid(mobile).getPassword().equals(password) && obj1.valid(mobile).getMobile()==mobile) {
-			
-			
+		if (request.getParameter("userAdmin")!=null && request.getParameter("adminPass") !=null && obj1.valid(mobile).getPassword().equals(password)) {
 			
 			
              if(obj1.valid(mobile).getRole().equals("admin") ){
-            	  // Cookie userCookie = new Cookie("name_server", obj1.valid(Mobile).getName());
-            	  // response.addCookie(userCookie);
-            	  // Cookie useridCookie = new Cookie("customerId_server", obj1.valid(Mobile).getCustomerID()+"");
-            	  // response.addCookie(useridCookie);
+            	  
             	 
 				response.sendRedirect("jsp/admin_service.jsp");
 		       } else {
-		    	  // response.sendRedirect("html/Resturant.html");
-		    	   
+		    	  
 		    	   response.getWriter().print("Dear User! You Are Not An Admin");
 		       }}
 		

@@ -10,7 +10,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import com.connection.*;
 public class SendToPathologyServlet extends HttpServlet{
 	public void doPost (HttpServletRequest request, HttpServletResponse response) {
 		int Patient = Integer.parseInt(request.getParameter("obeservation"));
@@ -37,8 +37,9 @@ public class SendToPathologyServlet extends HttpServlet{
 				int testId = Integer.parseInt(Test[i]);
 			
 			try {
-				Class.forName("com.mysql.cj.jdbc.Driver");
+				/*Class.forName("com.mysql.cj.jdbc.Driver");
 				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital", "root", "Demo@123");
+				*/Connection con = Conn.getCon();
 				Statement stmt2 = con.createStatement();
 				ResultSet rs2 = stmt2.executeQuery("select * from test where testId = "+testId+"");
 				

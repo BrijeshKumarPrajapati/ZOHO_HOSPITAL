@@ -9,7 +9,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import com.connection.*;
 public class SeeConsultationServlet extends HttpServlet{
 	public void service (HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
@@ -21,8 +21,9 @@ public class SeeConsultationServlet extends HttpServlet{
 		if (request.getParameter("seeConsultName")!=null && request.getParameter("seeConsultName").equals("seeConsult")) {
 			
 			try {
-				Class.forName("com.mysql.cj.jdbc.Driver");
+				/*Class.forName("com.mysql.cj.jdbc.Driver");
 				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital", "root", "Demo@123");
+				*/Connection con = Conn.getCon();
 				Statement stmt1 = con.createStatement();
 				ResultSet rs1 = stmt1.executeQuery("select * from  patient where pMobile = "+PatientMobile+"");
 				
