@@ -46,7 +46,7 @@
 	</nav>
 
 	<form> <%
-                       int pId = 0;
+                       int patientId = 0;
                        int testCost=0;
                        int medicineCost=0;
                        int registrationCost=0;
@@ -71,7 +71,7 @@
  				out.println("No Records Found !...");registrationCost=0;
  				
  			} else{ %><h6>History Of <%= rs1.getString(2)%>  having patient Id "<%= rs1.getInt(1)%>"</h6><%
- 				          pId = rs1.getInt(1);
+ 					patientId = rs1.getInt(1);
  			}  %> </br></br>
  			
  			
@@ -80,7 +80,7 @@
 
 
      Statement stmt2 = con.createStatement();
-	 String qry2 = "SELECT * FROM  testUser WHERE pId = "+pId+" AND tStatus = "+1+"";
+	 String qry2 = "SELECT * FROM  testUser WHERE pId = "+patientId+" AND tStatus = "+1+"";
 	 ResultSet rs2 = stmt2.executeQuery(qry2);
 
 
@@ -111,7 +111,7 @@
  		
  			<%
  			 Statement stmt3 = con.createStatement();
- 			 String qry3 = "SELECT * FROM  medicineUser WHERE pId = "+pId+" AND mStatus="+1+"";
+ 			 String qry3 = "SELECT * FROM  medicineUser WHERE pId = "+patientId+" AND mStatus="+1+"";
  			 ResultSet rs3 = stmt3.executeQuery(qry3);	
  			System.out.print(i);
  			if(rs3.next()==false){

@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONObject;
 import com.connection.*;
 public class ReferPatientServlet extends HttpServlet{
-	public void doPost (HttpServletRequest request, HttpServletResponse response) {
+	protected void doPost (HttpServletRequest request, HttpServletResponse response) {
 		
 		
 		try {

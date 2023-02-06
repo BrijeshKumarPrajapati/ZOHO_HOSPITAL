@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class DoctorServlet extends HttpServlet{
 	
-	public void service(HttpServletRequest request, HttpServletResponse response) {
+	protected void service(HttpServletRequest request, HttpServletResponse response) {
 		double mobile = Double.parseDouble(request.getParameter("userDoc"));	
 		String password = request.getParameter("docPass");
 	try {

@@ -4,11 +4,11 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import com.connection.*;
 public class AdminLogin {
-	String fullName;
-	String email;
-	String password;
-	String role;
-	double mobile;
+	 private String fullName;
+	 private String email;
+     private 	String password;
+	 private String role;
+	 private double mobile;
 	
 	
 	
@@ -67,7 +67,7 @@ public class AdminLogin {
 				+ ", mobile=" + mobile + "]";
 	}
 	
-	public AdminLogin valid(double mobile) {
+	protected AdminLogin valid(double mobile) {
 		AdminLogin  validObj = new AdminLogin ();
 		try {
 			/*Class.forName("com.mysql.cj.jdbc.Driver");

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONObject;
 import com.connection.*;
 public class StaffRegServlet extends HttpServlet{
-	public void doPost (HttpServletRequest request, HttpServletResponse response) throws IOException {
+	protected void doPost (HttpServletRequest request, HttpServletResponse response) throws IOException {
 		try {
 			String jsonBody = new BufferedReader(new InputStreamReader(request.getInputStream())).lines().collect(
 					    Collectors.joining("\n"));

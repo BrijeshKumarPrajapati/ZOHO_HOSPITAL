@@ -7,13 +7,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.connection.*;
 public class UpdateEmployeeServlet extends HttpServlet{
-    public void doPost(HttpServletRequest request, HttpServletResponse response) {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
     
     	
-  		String name =request.getParameter("entityChange");
-  		double mobile =Double.parseDouble(request.getParameter("employeeKnown"));
+  		String employeeName =request.getParameter("entityChange");
+  		double employeeMobile =Double.parseDouble(request.getParameter("employeeKnown"));
   		
-  		String deleteName = request.getParameter("deleteEmployee");
+  		//String deleteName = request.getParameter("deleteEmployee");
   		
   		try {
 			/*Class.forName("com.mysql.cj.jdbc.Driver");
@@ -22,8 +22,8 @@ public class UpdateEmployeeServlet extends HttpServlet{
 			System.out.println("Connection is : " + con);
 			PreparedStatement stmt = con.prepareStatement("update user_dtls set fullName =? where mobile =?");
 			
-			stmt.setString(1,name);
-			stmt.setDouble(2,mobile);
+			stmt.setString(1,employeeName);
+			stmt.setDouble(2,employeeMobile);
 			
 			int i=stmt.executeUpdate();  
 			System.out.println(i+" records updated");  

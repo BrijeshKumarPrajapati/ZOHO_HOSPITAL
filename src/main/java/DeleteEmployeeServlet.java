@@ -7,9 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.connection.*;
 public class DeleteEmployeeServlet extends HttpServlet{
-    public void doPost(HttpServletRequest request, HttpServletResponse response) {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
     	
-    	String name = request.getParameter("deleteEmployee");
+    	String employeeName = request.getParameter("deleteEmployee");
 
 		try {
 		/*Class.forName("com.mysql.cj.jdbc.Driver");
@@ -18,7 +18,7 @@ public class DeleteEmployeeServlet extends HttpServlet{
 		System.out.println("Connection is : " + con);
 		PreparedStatement stmt = con.prepareStatement("delete from user_dtls where fullName =?");
 		
-		stmt.setString(1,name);
+		stmt.setString(1,employeeName);
 		
 		int i=stmt.executeUpdate();  
 		System.out.println(i+" records updated");  

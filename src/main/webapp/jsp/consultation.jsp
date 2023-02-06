@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
      <%@ page import="java.sql.*" %>
      <%@ page import="com.connection.*"  %>
-     <% int pId = (int) request.getAttribute("PatientId");%>
+     <% int patientId = (int) request.getAttribute("PatientId");%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,7 +46,7 @@
 	</nav>	
 	<form action="/ZOHO_HOSPITAL/docCONSULTATION" method="post"> <%
 	
-	         String PatientName = null;
+	         String patientName = null;
         		
          try{
         	 
@@ -58,11 +58,11 @@
  			System.out.println("Connection is : " + con);
  			Statement stmt1 = con.createStatement();
  			
- 			String qry1 = "SELECT * FROM  testUser WHERE pId ="+pId+" AND tStatus ="+0+"";
+ 			String qry1 = "SELECT * FROM  testUser WHERE pId ="+patientId+" AND tStatus ="+0+"";
  			
  			String qry2 = "SELECT * FROM medicine ";
  			
- 			String qry3 = "SELECT * FROM  patient WHERE pId ="+pId+"";
+ 			String qry3 = "SELECT * FROM  patient WHERE pId ="+patientId+"";
  			
  			Statement stmt2 = con.createStatement();
  			
@@ -78,7 +78,7 @@
  			if(rs3.next()==false){
  				out.println("No Records Found !...");
  			} else{
- 				PatientName = rs3.getString(2);
+ 				patientName = rs3.getString(2);
  			}
 
  			if(rs1.next()==false){
@@ -88,7 +88,7 @@
  				     <tr><th>Patient Id</th><th>....</th><th>Patient Name</th><th>....</th><th>Test ID</th><th>....</th><th>Test Name</th><th>....</th><th>Description</th></tr> <%
  				   
  				     do{%>
- 				          <tr><td><input type="radio" name="testReport" value="<%= rs1.getInt(2) %>"/></td><td></td><td><%= PatientName%></td><td></td><td><%= rs1.getInt(1)%></td><td></td><td> <%= rs1.getString(4)%></td>
+ 				          <tr><td><input type="radio" name="testReport" value="<%= rs1.getInt(2) %>"/></td><td></td><td><%= patientName%></td><td></td><td><%= rs1.getInt(1)%></td><td></td><td> <%= rs1.getString(4)%></td>
  				          <td></td><td> <%= rs1.getString(5)%></td></tr>
  				          <% 
  				    	 
@@ -115,8 +115,6 @@
  				</table> </br><% //out.println("<b>Total transaction with us till now is : </b>"+" "+" "+ sum +"/-");%></br><%
  			}
  			
- 			
-
          } catch(Exception e){
         	 e.getStackTrace();
          }

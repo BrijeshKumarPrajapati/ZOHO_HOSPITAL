@@ -7,11 +7,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.connection.*;
 public class AddNewTestServlet extends HttpServlet{
-	public void doPost (HttpServletRequest request, HttpServletResponse response) {
+	protected void doPost (HttpServletRequest request, HttpServletResponse response) {
 		
 	
-		String name = request.getParameter("testAddName");
-		int price = Integer.parseInt(request.getParameter("testAddPrice"));
+	    String testName = request.getParameter("testAddName");
+		int testPrice = Integer.parseInt(request.getParameter("testAddPrice"));
 		
 		try {
 			/*Class.forName("com.mysql.cj.jdbc.Driver");
@@ -20,8 +20,8 @@ public class AddNewTestServlet extends HttpServlet{
 			Connection con = Conn.getCon();
 			System.out.println("Connection is : " + con);
 			PreparedStatement stmt = con.prepareStatement("INSERT into  test (testName, testPrice) VALUES(?,?)");
-			stmt.setString(1, name);
-			stmt.setInt(2, price);
+			stmt.setString(1, testName);
+			stmt.setInt(2, testPrice);
 
 			int i=stmt.executeUpdate();  
 			System.out.println(i+" records inserted"); 

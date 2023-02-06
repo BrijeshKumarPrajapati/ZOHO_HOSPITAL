@@ -3,7 +3,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class RegistrationServlet extends HttpServlet{
-	public void doPost (HttpServletRequest request, HttpServletResponse response) {
+	protected void doPost (HttpServletRequest request, HttpServletResponse response) {
 		StaffRegServlet obj = new StaffRegServlet();
 
 		if (request.getParameter("Submit")!=null && request.getParameter("Submit").equals("Submit")) {

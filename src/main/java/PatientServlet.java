@@ -9,12 +9,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.connection.*;
 public class PatientServlet extends HttpServlet{
-	public void doPost (HttpServletRequest request, HttpServletResponse response) {
+	protected void doPost (HttpServletRequest request, HttpServletResponse response) {
 		
-		String pName = request.getParameter("patiRegName");
-		int pAge = Integer.parseInt(request.getParameter("patiRegAge"));
-		double pMobile =Double.parseDouble(request.getParameter("patiRegMobile"));
-		String pBloodG = request.getParameter("patiRegBG");
+		String patientName = request.getParameter("patiRegName");
+		int patientAge = Integer.parseInt(request.getParameter("patiRegAge"));
+		double patientMobile =Double.parseDouble(request.getParameter("patiRegMobile"));
+		String patientBloodGroup = request.getParameter("patiRegBG");
 		//String pIllness = request.getParameter("patiRegIll");
 		
 		if (request.getParameter("patiReg")!=null && request.getParameter("patiReg").equals("patiReg")) {
@@ -32,10 +32,10 @@ public class PatientServlet extends HttpServlet{
 			System.out.println("Connection is : " + con);
 			PreparedStatement stmt = con.prepareStatement("insert into patient(pName, pAge, pMobile, pBloodG, Date, Time) values(?,?,?,?,?,?)");
 			
-			stmt.setString(1, pName);
-			stmt.setInt(2, pAge);
-			stmt.setDouble(3, pMobile);
-			stmt.setString(4,pBloodG );
+			stmt.setString(1, patientName);
+			stmt.setInt(2, patientAge);
+			stmt.setDouble(3, patientMobile);
+			stmt.setString(4,patientBloodGroup );
 			//stmt.setString(5, pIllness);
 			stmt.setDate(5, date);
 			stmt.setTimestamp(6, time);

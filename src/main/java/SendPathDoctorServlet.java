@@ -9,16 +9,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.connection.*;
 public class SendPathDoctorServlet extends HttpServlet{
-	public void doPost (HttpServletRequest request, HttpServletResponse response) {
+	protected void doPost (HttpServletRequest request, HttpServletResponse response) {
 		
-		String [] Testt = request.getParameterValues("testReport");
+		String [] testtArray = request.getParameterValues("testReport");
 		
 		if (request.getParameter("PathReport")!=null && request.getParameter("PathReport").equals("PathReport")) {
 			
-			for(int i=0;i<Testt.length;i++) {
-				int testtId = Integer.parseInt(Testt[i]);
+			for(int i=0;i<testtArray.length;i++) {
+				int testtId = Integer.parseInt(testtArray[i]);
 				
-				String Discription = request.getParameter("descPATH"+testtId);
+				String discription = request.getParameter("descPATH"+testtId);
 			
 			try {
 				/*Class.forName("com.mysql.cj.jdbc.Driver");
@@ -27,7 +27,7 @@ public class SendPathDoctorServlet extends HttpServlet{
 				
 				PreparedStatement stmt1 = con.prepareStatement("UPDATE testUser SET discription = ? WHERE testUser_id = ?");
 				
-				stmt1.setString(1, Discription);
+				stmt1.setString(1, discription);
 				stmt1.setInt(2, testtId);
 				
 				int j = stmt1.executeUpdate();  

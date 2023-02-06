@@ -11,18 +11,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class ClearanceServlet extends HttpServlet{
-	public void service (HttpServletRequest request, HttpServletResponse response) throws IOException {
+	protected void service (HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
-		double PatientMobile = Double.parseDouble(request.getParameter("clearanceName"));
+		double patientMobile = Double.parseDouble(request.getParameter("clearanceName"));
 		
 		int pId=0;
-		int TestSum=0;
-		int  MedicineSum=0;
+		int testSum=0;
+		int  medicineSum=0;
 		
 		if (request.getParameter("clearanceBUTTON")!=null && request.getParameter("clearanceBUTTON").equals("clearanceBUTTON")) {
 			
 			try {
-			request.setAttribute("MobileNo", PatientMobile);
+			request.setAttribute("MobileNo", patientMobile);
 			RequestDispatcher rd= request.getRequestDispatcher("/jsp/BillReoprt.jsp");
 			
 			rd.forward(request, response);  

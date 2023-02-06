@@ -7,15 +7,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.connection.*;
-public class AddNewMedicineServelet extends HttpServlet{
-	public void doPost (HttpServletRequest request, HttpServletResponse response) {
+ public class AddNewMedicineServelet extends HttpServlet{
+	protected void doPost (HttpServletRequest request, HttpServletResponse response) {
 		
 	
-		String name = request.getParameter("medicineAddName");
-		int price = Integer.parseInt(request.getParameter("medicineAddPrice"));
+		 String medicineName = request.getParameter("medicineAddName");
+		 int medicinePrice = Integer.parseInt(request.getParameter("medicineAddPrice"));
 		
 		try {
-			addRecordToDb(name, price); 
+			addRecordToDb(medicineName, medicinePrice); 
 			response.getWriter().print("New Medicine Added Successfully...");
 		} catch (Exception e) {
 			e.printStackTrace();

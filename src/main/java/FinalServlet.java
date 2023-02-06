@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.connection.*;
 public class FinalServlet extends HttpServlet{
-	public void service (HttpServletRequest request, HttpServletResponse response) throws IOException {
+	protected void service (HttpServletRequest request, HttpServletResponse response) throws IOException {
 	int  patientId = Integer.parseInt(request.getParameter("hiddenPid"));
 		
 		System.out.println("Wrking patient Id is: "+patientId);

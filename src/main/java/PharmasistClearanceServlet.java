@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class PharmasistClearanceServlet extends HttpServlet{
-	public void service (HttpServletRequest request, HttpServletResponse response) {
+	protected void service (HttpServletRequest request, HttpServletResponse response) {
 		
 
 		if (request.getParameter("MediReport")!=null && request.getParameter("MediReport").equals("MediReport")) {

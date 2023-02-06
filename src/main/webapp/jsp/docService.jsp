@@ -55,7 +55,7 @@ crossorigin="anonymous"></script>
 	<form action="/ZOHO_HOSPITAL/docOBSERVATION" method="post"> <%
         		
         		String mobile =request.getParameter("userDoc");
-	            int PatientId =0;
+	            int patientId =0;
 	            int n=0;
         
          try{

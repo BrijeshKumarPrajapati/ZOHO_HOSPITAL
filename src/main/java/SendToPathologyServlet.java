@@ -12,13 +12,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.connection.*;
 public class SendToPathologyServlet extends HttpServlet{
-	public void doPost (HttpServletRequest request, HttpServletResponse response) {
-		int Patient = Integer.parseInt(request.getParameter("obeservation"));
-		String [] Test = request.getParameterValues("testBook");
+	protected void doPost (HttpServletRequest request, HttpServletResponse response) {
+		int patient = Integer.parseInt(request.getParameter("obeservation"));
+		String [] testArray = request.getParameterValues("testBook");
 		
-		int Test_Id =0;
-		int Cost=0;
-		String Test_name=null;
+		int test_Id =0;
+		int cost=0;
+		String test_name=null;
 		int sum = 0;
 		
 
@@ -31,10 +31,10 @@ public class SendToPathologyServlet extends HttpServlet{
 		    Timestamp time = new Timestamp(currentTimeMS);
 			
 			
-		    for(int i=0;i<Test.length;i++) {
+		    for(int i=0;i<testArray.length;i++) {
 				
 				
-				int testId = Integer.parseInt(Test[i]);
+				int testId = Integer.parseInt(testArray[i]);
 			
 			try {
 				/*Class.forName("com.mysql.cj.jdbc.Driver");
@@ -44,17 +44,17 @@ public class SendToPathologyServlet extends HttpServlet{
 				ResultSet rs2 = stmt2.executeQuery("select * from test where testId = "+testId+"");
 				
 				while(rs2.next()) {
-					 Test_Id= rs2.getInt("testId");
-					 Test_name = rs2.getString("testName");
-					 Cost = rs2.getInt("testPrice");
+					 test_Id= rs2.getInt("testId");
+					 test_name = rs2.getString("testName");
+					 cost = rs2.getInt("testPrice");
 					
 				
 				PreparedStatement stmt1 = con.prepareStatement("insert into testUser (testId, pId, cost, name, date, time) values(?,?,?,?,?,?)");
 				
-				stmt1.setInt(1, Test_Id);
-				stmt1.setInt(2, Patient);
-				stmt1.setInt(3, Cost);
-				stmt1.setString(4, Test_name);
+				stmt1.setInt(1, test_Id);
+				stmt1.setInt(2, patient);
+				stmt1.setInt(3, cost);
+				stmt1.setString(4, test_name);
 				stmt1.setDate(5,date);
 				stmt1.setTimestamp(6,time);
 			
@@ -62,7 +62,7 @@ public class SendToPathologyServlet extends HttpServlet{
 				System.out.println(j + "records inserted");
                 PreparedStatement stmt3 = con.prepareStatement("UPDATE patient SET pStatus = ? WHERE pId = ?");
 				stmt3.setInt(1, 1);
-				stmt3.setInt(2, Patient);
+				stmt3.setInt(2, patient);
 				int k = stmt3.executeUpdate();  
 				System.out.println(k + "records inserted");
 				

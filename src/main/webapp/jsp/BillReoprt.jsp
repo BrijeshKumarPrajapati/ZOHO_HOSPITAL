@@ -45,23 +45,16 @@
 		</div>
 	</nav>
 <form action="/ZOHO_HOSPITAL/final"> <%
-
-                     
-                       int pId = 0;
+					 
+					   int patientId = 0;
                        int testCost=0;
                        int medicineCost=0;
                        int registrationCost=0;
                        int total =0;
                        int i=0;
-                       
-        
+                 
          try{
-        	 
-        	/*Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
- 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital", "root", "Demo@123");
- 			
- 			*/
- 			Connection con = Conn.getCon();
+        	Connection con = Conn.getCon();
  			System.out.println("Connection is : " + con);
  			Statement stmt1 = con.createStatement();
  			String qry1 = "SELECT * FROM  patient WHERE pMobile = "+mobile+"";
@@ -73,7 +66,7 @@
  			
  			
  				     do{
- 				          pId = rs1.getInt(1);
+ 				    	patientId = rs1.getInt(1);
  				         
  				    	 
  				     }while(rs1.next());
@@ -84,7 +77,7 @@
 
 
      Statement stmt2 = con.createStatement();
-	 String qry2 = "SELECT * FROM  testUser WHERE pId = "+pId+" AND tStatus = "+0+"";
+	 String qry2 = "SELECT * FROM  testUser WHERE pId = "+patientId+" AND tStatus = "+0+"";
 	 ResultSet rs2 = stmt1.executeQuery(qry2);
 
 
@@ -114,7 +107,7 @@
  			<h6>List Of Medicine </h6>
  			<%
  			 Statement stmt3 = con.createStatement();
- 			 String qry3 = "SELECT * FROM  medicineUser WHERE pId = "+pId+" AND mStatus="+0+"";
+ 			 String qry3 = "SELECT * FROM  medicineUser WHERE pId = "+patientId+" AND mStatus="+0+"";
  			 ResultSet rs3 = stmt1.executeQuery(qry3);	
  			
  			if(rs3.next()==false){
@@ -149,7 +142,7 @@
          }
         	
          %></br></br>
-         <input type="hidden" name="hiddenPid" value="<%=pId%>"/>
+         <input type="hidden" name="hiddenPid" value="<%=patientId%>"/>
            Confirm Patient Clearance : <button type="submit" name="clear" value="clear">Submit Clearance</button> </br></br>
            <button type="button" onclick = "myPrint()"> Print Report</button>
          </form></br></br>

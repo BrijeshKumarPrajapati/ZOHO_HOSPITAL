@@ -4,32 +4,32 @@ import javax.servlet.http.HttpServletResponse;
 
 public class UserServlet extends HttpServlet{
 	
-	public void service(HttpServletRequest request, HttpServletResponse response) {
-		double mobile = Double.parseDouble(request.getParameter("userLogin"));	
-		String password = request.getParameter("userPass");
+	protected void service(HttpServletRequest request, HttpServletResponse response) {
+		 double userMobile = Double.parseDouble(request.getParameter("userLogin"));	
+		 String userPassword = request.getParameter("userPass");
 	try {
 			AdminLogin obj1= new AdminLogin();
 			
 			
 			
-		if (request.getParameter("userLogin")!=null && request.getParameter("userPass") !=null && obj1.valid(mobile).getPassword().equals(password)) {
+		if (request.getParameter("userLogin")!=null && request.getParameter("userPass") !=null && obj1.valid(userMobile).getPassword().equals(userPassword)) {
 			
 			
 			
 			
-            if(obj1.valid(mobile).getRole().equals("path") ){
+            if(obj1.valid(userMobile).getRole().equals("path") ){
             	  // Cookie userCookie = new Cookie("name_server", obj1.valid(Mobile).getName());
             	  // response.addCookie(userCookie);
             	  // Cookie useridCookie = new Cookie("customerId_server", obj1.valid(Mobile).getCustomerID()+"");
             	  // response.addCookie(useridCookie);*/
             	 
 				response.sendRedirect("jsp/Pathology.jsp");
-		     } else if(obj1.valid(mobile).getRole().equals("pharma")){
+		     } else if(obj1.valid(userMobile).getRole().equals("pharma")){
 		    	  // response.sendRedirect("html/Resturant.html");
 		    	   
 		    	 /*  response.getWriter().print("Dear User! You Are Not An Admin");*/
 		    	 response.sendRedirect("jsp/Pharmasist.jsp");
-		       } else if(obj1.valid(mobile).getRole().equals("receptionist")){
+		       } else if(obj1.valid(userMobile).getRole().equals("receptionist")){
 			    	  // response.sendRedirect("html/Resturant.html");
 		    	   
 			    	 /*  response.getWriter().print("Dear User! You Are Not An Admin");*/

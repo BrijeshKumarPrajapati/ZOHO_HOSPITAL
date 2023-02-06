@@ -50,9 +50,9 @@
 	<form action="/ZOHO_HOSPITAL/mediREPORT" method="post"> <%
         		
         		//String mobile =request.getParameter("userDoc");
-			    int PatientId = 0;
-                String PatientName="";
-                String PatientName1="";
+			    int patientId = 0;
+                String patientName="";
+                String patientName1="";
         
          try{
         	 
@@ -78,24 +78,24 @@
  				   
  				     do{%>
  				     
- 				     <% PatientId = rs1.getInt(2);
+ 				     <% patientId = rs1.getInt(2);
  				       Statement stmt2 = con.createStatement();
- 			           String qry2 = "SELECT pName FROM  patient WHERE pId="+PatientId+"";
+ 			           String qry2 = "SELECT pName FROM  patient WHERE pId="+patientId+"";
  			           ResultSet rs2 = stmt2.executeQuery(qry2); 
  			           if(rs2.next()){
- 			        	  PatientName1 = rs2.getString(1);
- 			        	if(PatientName.equals(PatientName1))
+ 			        	  patientName1 = rs2.getString(1);
+ 			        	if(patientName.equals(patientName1))
  			        	      {
- 			        		PatientName = "";
+ 			        		patientName = "";
  			        	      } 
  			        	else {
- 			        		PatientName = rs2.getString(1);
+ 			        		patientName = rs2.getString(1);
  			        	
  			        	     }
  			        	}
  			         
  			         %>
- 				          <tr><td><%= rs1.getInt(3)%></td><td></td><td> <%= PatientName%></td><td></td><td><%= rs1.getString(2) %></td></tr>
+ 				          <tr><td><%= rs1.getInt(3)%></td><td></td><td> <%= patientName%></td><td></td><td><%= rs1.getString(2) %></td></tr>
  				          <% 
  				    	 
  				     }while(rs1.next());%>

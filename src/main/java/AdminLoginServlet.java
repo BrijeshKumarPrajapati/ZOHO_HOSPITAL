@@ -5,8 +5,8 @@ import javax.servlet.http.HttpServletResponse;
 
 public class AdminLoginServlet extends HttpServlet{
 	
-	public void service(HttpServletRequest request, HttpServletResponse response) {
-		double mobile = Double.parseDouble(request.getParameter("userAdmin"));	
+	    protected void service(HttpServletRequest request, HttpServletResponse response) {
+	    double mobile = Double.parseDouble(request.getParameter("userAdmin"));	
 		String password = request.getParameter("adminPass");
 	try {
 			AdminLogin obj1= new AdminLogin();
