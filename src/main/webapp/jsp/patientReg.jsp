@@ -15,6 +15,12 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
 	integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
 	crossorigin="anonymous" referrerpolicy="no-referrer" />
+	
+	<script src="https://code.jquery.com/jquery-3.6.3.js" 
+integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" 
+crossorigin="anonymous"></script>
+	
+	<script src="/ZOHO_HOSPITAL/js/addPatient.js"></script>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-success">
@@ -42,15 +48,16 @@
 		</div>
 	</nav>
 	
+	
 <h5>Patient Registration Form</h5></br>
-<form action="/ZOHO_HOSPITAL/pReg" method="post">
-Full Name : <input type="text" name="patiRegName"/><br></br>
-Age : <input type="number" name="patiRegAge"/></br></br>
-Mobile : <input type="number" name="patiRegMobile"/><br></br>
-Blood Group : <input type="text" name="patiRegBG"/><br></br>
-<!--Illness : <input type="text" name="patiRegIll"/><br></br>-->
-Submit Details : <button type="submit" name="patiReg" value="patiReg">Register</button></br></br></br></br>
-</form>	
+
+Full Name : <input type="text" id="patiName" name="patiRegName"/><br></br>
+Age : <input type="number" id="patiAge" name="patiRegAge"/></br></br>
+Mobile : <input type="number" id="patiMobile" name="patiRegMobile"/><br></br>
+Blood Group : <input type="text" id="patiBG" name="patiRegBG"/><br></br>
+Submit Details : <button type="button" onclick="submitPatient();">Register</button></br></br></br></br>
+
+
 	 </br></br></br></br></br></br></br></br></br></br></br></br></br>
 <div class="container-fluid p-1 bg-success text-center text-white">
 	<p>@copyright Zoho Hospitals</p>

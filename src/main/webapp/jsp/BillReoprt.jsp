@@ -99,7 +99,7 @@
  				    	 
  				     }while(rs2.next());%>
  				     
- 				</table> </br></br><% //out.println("<b>Total transaction with us till now is : </b>"+" "+" "+ sum +"/-");%></br>
+ 				</table> </br></br></br>
  				<%
  			}%>
  			

@@ -9,14 +9,11 @@ import com.connection.*;
 public class UpdateMedicineServlet extends HttpServlet{
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
     
-    	
   		String medicineName =request.getParameter("testItem");
   		int  medicenePrice =Integer.parseInt(request.getParameter("oldPrice"));
   		
   		try {
-			/*Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital", "root", "Demo@123");
-  			*/Connection con = Conn.getCon();
+			Connection con = Conn.getCon();
 			System.out.println("Connection is : " + con);
 			PreparedStatement stmt = con.prepareStatement("update medicine set mPrice =? where mName =?");
 			
@@ -30,6 +27,5 @@ public class UpdateMedicineServlet extends HttpServlet{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-  		
-    }
+  	}
 }

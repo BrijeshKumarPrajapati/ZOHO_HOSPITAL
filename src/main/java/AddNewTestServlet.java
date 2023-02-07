@@ -14,9 +14,7 @@ public class AddNewTestServlet extends HttpServlet{
 		int testPrice = Integer.parseInt(request.getParameter("testAddPrice"));
 		
 		try {
-			/*Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital", "root", "Demo@123");
-			*/
+			
 			Connection con = Conn.getCon();
 			System.out.println("Connection is : " + con);
 			PreparedStatement stmt = con.prepareStatement("INSERT into  test (testName, testPrice) VALUES(?,?)");

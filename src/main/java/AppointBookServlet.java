@@ -2,18 +2,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class AppointBookServlet extends HttpServlet{
-	protected void service (HttpServletRequest request, HttpServletResponse response) {
-		
+public class AppointBookServlet extends HttpServlet {
+	protected void service(HttpServletRequest request, HttpServletResponse response) {
+		if (request.getParameter("appointmentBook") != null
+				&& request.getParameter("appointmentBook").equals("appointmentBook")) {
+			try {
 
-		if (request.getParameter("appointmentBook")!=null && request.getParameter("appointmentBook").equals("appointmentBook")) {
-	try {
-		 
-		response.sendRedirect("jsp/appointment.jsp");
-		
-		} catch(Exception e) {
-			e.printStackTrace();
+				response.sendRedirect("jsp/appointment.jsp");
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
-}
 }

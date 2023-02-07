@@ -52,16 +52,6 @@
 	
 	</form>
 
-
-
-
-
-
-
-
-
-
-
  </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
 <div class="container-fluid p-1 bg-success text-center text-white">
 	<p>@copyright Zoho Hospitals</p>

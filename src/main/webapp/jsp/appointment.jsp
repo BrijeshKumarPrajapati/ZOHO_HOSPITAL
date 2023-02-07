@@ -48,13 +48,8 @@
 	<h6>Patients Details</h6>
 	 <form action="/ZOHO_HOSPITAL/appoint" method="post"> <%
         		
-        		//String mobile =request.getParameter("userDoc");
-        
          try{
-        	 
-        	/*Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
- 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital", "root", "Demo@123");
- 			*/
+        	
  			Connection con = Conn.getCon();
  			System.out.println("Connection is : " + con);
  			Statement stmt1 = con.createStatement();
@@ -100,18 +95,14 @@
  				    	 
  				     }while(rs2.next());%>
  				     
- 				</table> </br><% //out.println("<b>Total transaction with us till now is : </b>"+" "+" "+ sum +"/-");%></br><%
+ 				</table> </br></br><%
  			}
- 			
- 			
  			
          } catch(Exception e){
         	 e.getStackTrace();
          }
         	
          %></br></br>
-	
-	
 	
 	Book Appointment : <button type="submit" name="appointment" value="Sappointment">Book</button>
 	

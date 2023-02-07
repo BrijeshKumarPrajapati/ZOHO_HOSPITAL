@@ -25,9 +25,7 @@ import com.connection.*;
 }
 
 	private void addRecordToDb(String name, int price) throws ClassNotFoundException, SQLException {
-		/*Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital", "root", "Demo@123");
-		*/
+		
 		Connection con = Conn.getCon();
 		System.out.println("Connection is : " + con);
 		PreparedStatement stmt = con.prepareStatement("INSERT into  medicine (mName, mPrice) VALUES(?,?)");

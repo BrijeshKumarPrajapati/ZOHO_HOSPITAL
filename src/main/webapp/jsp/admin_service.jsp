@@ -52,12 +52,9 @@
 	<a href="recReg.jsp">Register Receptionist</a></br></br></br>
 <%
 try{ 
-	/*Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
-	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital", "root", "Demo@123");
-		*/
+	
 		Connection con = Conn.getCon();
 		System.out.println("Connection is : " + con);
-		
 		
 		Statement stmt1 = con.createStatement();
 		String qry1 = "SELECT * FROM  user_dtls";
@@ -140,11 +137,6 @@ try{
 	 
 	 <h5>Get Patient History</h5>
 	<a href="historyInput.jsp">Patient History</a></br></br></br></br>
-	
-	
-	
-	
-	
 	
 	<h5>Add and Update Pathology, Medicine</h5>
 	 <form action="/ZOHO_HOSPITAL/testUPDATE" method="post">

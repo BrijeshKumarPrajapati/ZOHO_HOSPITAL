@@ -5,8 +5,6 @@ import javax.servlet.http.HttpServletResponse;
 
 public class PharmasistClearanceServlet extends HttpServlet{
 	protected void service (HttpServletRequest request, HttpServletResponse response) {
-		
-
 		if (request.getParameter("MediReport")!=null && request.getParameter("MediReport").equals("MediReport")) {
 	try {
 		 response.getWriter().print("Patient Has Taken His Medicine");

@@ -212,8 +212,6 @@
 	</servlet-mapping>
 	
 	
-	
-	
 	<servlet>
 		<servlet-name>medicineUpdate</servlet-name>
 		<servlet-class>UpdateMedicineServlet</servlet-class>

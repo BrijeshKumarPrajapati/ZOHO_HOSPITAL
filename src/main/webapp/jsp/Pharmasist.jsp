@@ -49,16 +49,13 @@
 	
 	<form action="/ZOHO_HOSPITAL/mediREPORT" method="post"> <%
         		
-        		//String mobile =request.getParameter("userDoc");
+        		
 			    int patientId = 0;
                 String patientName="";
                 String patientName1="";
         
          try{
-        	 
-        	/*Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
- 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital", "root", "Demo@123");
- 			*/
+        	
  			Connection con = Conn.getCon();
  			System.out.println("Connection is : " + con);
  			

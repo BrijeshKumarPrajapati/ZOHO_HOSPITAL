@@ -49,10 +49,7 @@
 	         String patientName = null;
         		
          try{
-        	 
-        	/*Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
- 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital", "root", "Demo@123");
- 			*/
+        	
  			Connection con = Conn.getCon();
  			
  			System.out.println("Connection is : " + con);
@@ -94,7 +91,7 @@
  				    	 
  				     }while(rs1.next());%>
  				     
- 				</table><% //out.println("<b>Total transaction with us till now is : </b>"+" "+" "+ sum +"/-");%>
+ 				</table>
  				<%
  			}  %> </br></br>
  			
@@ -112,7 +109,7 @@
  				    	 
  				     }while(rs2.next());%>
  				     
- 				</table> </br><% //out.println("<b>Total transaction with us till now is : </b>"+" "+" "+ sum +"/-");%></br><%
+ 				</table> </br></br><%
  			}
  			
          } catch(Exception e){
